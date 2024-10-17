@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onderzoekend Vermogen Scan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold mb-8 text-center">Onderzoekend Vermogen Scan voor Docenten Hoger Onderwijs</h1>
+        
+        <form id="scanForm">
+            <div class="mb-8">
+                <label for="firstName" class="block text-lg font-semibold mb-4">Voornaam</label>
+                <input type="text" id="firstName" name="firstName" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Vul je voornaam in" required>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h2 class="text-xl font-semibold mb-4">1. Onderwijzen en ondersteunen van onderzoeksvaardigheden</h2>
+                    <p class="mb-4">Ik kan effectief studenten begeleiden en ondersteunen bij het ontwikkelen van hun onderzoeksvaardigheden.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center gap-2"><input type="radio" name="q1" value="1" required> Helemaal oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q1" value="2"> Oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q1" value="3"> Neutraal</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q1" value="4"> Eens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q1" value="5"> Helemaal eens</label>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h2 class="text-xl font-semibold mb-4">2. Onderzoeksontwerp en methodologie</h2>
+                    <p class="mb-4">Ik ben bekwaam in het ontwerpen van onderzoeksopzetten, inclusief de formulering van hypothesen en de keuze van geschikte methodologieën.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center gap-2"><input type="radio" name="q2" value="1" required> Helemaal oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q2" value="2"> Oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q2" value="3"> Neutraal</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q2" value="4"> Eens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q2" value="5"> Helemaal eens</label>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h2 class="text-xl font-semibold mb-4">3. Data-analyse en kritisch evalueren</h2>
+                    <p class="mb-4">Ik kan onderzoeksdata effectief analyseren en kritische evaluaties uitvoeren met betrekking tot de validiteit en betrouwbaarheid van onderzoeksresultaten.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center gap-2"><input type="radio" name="q3" value="1" required> Helemaal oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q3" value="2"> Oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q3" value="3"> Neutraal</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q3" value="4"> Eens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q3" value="5"> Helemaal eens</label>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h2 class="text-xl font-semibold mb-4">4. Integratie van onderzoeksresultaten in het onderwijs</h2>
+                    <p class="mb-4">Ik kan onderzoeksresultaten toepassen in mijn onderwijspraktijk en daarmee bijdragen aan evidence-based leren.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center gap-2"><input type="radio" name="q4" value="1" required> Helemaal oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q4" value="2"> Oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q4" value="3"> Neutraal</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q4" value="4"> Eens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q4" value="5"> Helemaal eens</label>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h2 class="text-xl font-semibold mb-4">5. Leiderschap in onderzoek</h2>
+                    <p class="mb-4">Ik kan effectief leiding geven aan onderzoeksprojecten en samenwerking tussen studenten en andere docenten stimuleren.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center gap-2"><input type="radio" name="q5" value="1" required> Helemaal oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q5" value="2"> Oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q5" value="3"> Neutraal</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q5" value="4"> Eens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q5" value="5"> Helemaal eens</label>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h2 class="text-xl font-semibold mb-4">6. Deelname aan onderzoeksprojecten (ervaring)</h2>
+                    <p class="mb-4">Ik werk actief aan mijn professionele ontwikkeling door deel te nemen aan onderzoeksprojecten.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center gap-2"><input type="radio" name="q6" value="1" required> Helemaal oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q6" value="2"> Oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q6" value="3"> Neutraal</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q6" value="4"> Eens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q6" value="5"> Helemaal eens</label>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h2 class="text-xl font-semibold mb-4">7. Bijscholing op het gebied van onderzoeksmethodologie (kennisontwikkeling)</h2>
+                    <p class="mb-4">Ik werk actief aan mijn professionele ontwikkeling door het volgen van bijscholingen op het gebied van onderzoeksmethodologie.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center gap-2"><input type="radio" name="q7" value="1" required> Helemaal oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q7" value="2"> Oneens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q7" value="3"> Neutraal</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q7" value="4"> Eens</label>
+                        <label class="flex items-center gap-2"><input type="radio" name="q7" value="5"> Helemaal eens</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="flex flex-col items-center mt-2">
+            <div class="w-full max-w-3xl mb-8">
+                <canvas id="radarChart"></canvas>
+            </div>
+            <button id="downloadBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg disabled:opacity-50" disabled>
+                Download PDF Rapport
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        let radarChart;
+
+        const chartData = {
+            labels: [
+                'Onderwijzen en ondersteunen',
+                'Ontwerp en methodologie',
+                'Analyse en evalueren',
+                'Integratie in het onderwijs',
+                'Leiderschap in onderzoek',
+                'Deelname aan projecten',
+                'Bijscholing methodologie'
+            ],
+            datasets: [{
+                label: 'Onderzoekend Vermogen',
+                data: [0, 0, 0, 0, 0, 0, 0],
+                fill: true,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgb(54, 162, 235)',
+                pointBackgroundColor: 'rgb(54, 162, 235)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(54, 162, 235)'
+            }]
+        };
+
+        const chartConfig = {
+            type: 'radar',
+            data: chartData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                aspectRatio: 0.33,
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                scales: {
+                    r: {
+                        suggestedMin: 0,
+                        suggestedMax: 5,
+                        pointLabels: {
+                            font: {
+                                size: 14
+                            },
+                            callback: function(value) {
+                                return value.split(' ').join('\n');
+                            }
+                        },
+                        min: 0,
+                        max: 5,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        };
+
+        radarChart = new Chart(ctx, chartConfig);
+
+        const form = document.getElementById('scanForm');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        form.addEventListener('change', updateChart);
+
+        function updateChart() {
+            const formData = new FormData(form);
+            const values = [...formData.values()].slice(1).map(Number);
+
+            if (values.length === 7 && !values.includes(0)) {
+                chartData.datasets[0].data = values;
+                radarChart.update();
+                downloadBtn.disabled = false;
+            }
+        }
+
+        downloadBtn.addEventListener('click', generatePDF);
+
+        // Mapping score to maturity descriptions for each scan item
+        const maturityDescriptions = {
+            q1: [
+                "1 - Ontwikkelen van bewustzijn over lesgeven en leren.",
+                "2 - Actief ondersteunen van leren en integreren van feedback.",
+                "3 - Bijdragen aan curriculumontwerp en leiden van onderwijsbijeenkomsten.",
+                "3 - Innoveren in onderwijsaanpakken en anderen begeleiden.",
+                "5 - Erkend leider in onderwijspraktijken, bepaalt strategische richting."
+            ],
+            q2: [
+                "1 - Basiskennis van onderzoeksmethodologieën.",
+                "2 - Toepassen van onderzoeksontwerp met begeleiding.",
+                "3 - Zelfstandig complexe onderzoeksprojecten ontwerpen.",
+                "4 - Innoveren in methodologische toepassingen.",
+                "5 - Stelt standaarden voor onderzoeksmethodologie op nationaal/internationaal niveau."
+            ],
+            q3: [
+                "1 - Basisvaardigheden in data-analyse en evaluatie.",
+                "2 - Voert eenvoudige data-analyse uit met begeleiding.",
+                "3 - Zelfstandig data analyseren en evalueren.",
+                "4 - Ontwikkelt nieuwe benaderingen voor data-analyse.",
+                "5 - Leidt innovaties in data-analyse en kritische evaluatie."
+            ],
+            q4: [
+                "1 - Basiskennis van onderzoeksresultaten integreren in onderwijs.",
+                "2 - Past onderzoeksresultaten toe met begeleiding.",
+                "3 - Zelfstandig onderzoeksresultaten integreren in onderwijspraktijk.",
+                "4 - Innoveren in het gebruik van onderzoeksresultaten.",
+                "5 - Bepaalt de standaard voor evidence-based onderwijs op institutioneel niveau."
+            ],
+            q5: [
+                "1 - Basiskennis van leiderschap in onderzoek.",
+                "2 - Leidt kleine onderzoeksprojecten met begeleiding.",
+                "3 - Zelfstandig grotere onderzoeksprojecten leiden.",
+                "4 - Bevordert samenwerking en innovatie in onderzoek.",
+                "5 - Erkend leider in onderzoeksmanagement op nationaal/internationaal niveau."
+            ],
+            q6: [
+                "1 - Neemt deel aan kleine onderzoeksprojecten.",
+                "2 - Actief bijdragen aan projecten met begeleiding.",
+                "3 - Zelfstandig deelnemen en bijdragen aan grote projecten.",
+                "4 - Leidt onderzoeksprojecten en bevordert teamontwikkeling.",
+                "5 - Leidt meerdere onderzoeksprojecten op hoog niveau."
+            ],
+            q7: [
+                "1 - Basiskennis van onderzoeksmethodologie door training.",
+                "2 - Volgt regelmatig bijscholing met begeleiding.",
+                "3 - Zelfstandig zoeken naar en deelnemen aan trainingen.",
+                "4 - Ontwikkelt eigen kennis en geeft trainingen.",
+                "5 - Erkend expert in kennisontwikkeling en methodologietraining."
+            ]
+        };
+
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const firstName = document.getElementById('firstName').value;
+            const formData = new FormData(form);
+            const values = [...formData.values()].slice(1).map(Number); // Extract scores for each item
+
+            // Page 1 - Cover Page
+            doc.setFontSize(24);
+            doc.text("Onderzoekend Vermogen Scan", 105, 50, null, null, "center");
+            doc.setFontSize(18);
+            doc.text(`Naam: ${firstName}`, 105, 90, null, null, "center");
+
+            doc.addPage();
+
+            // Page 2 - Results and Phases
+            doc.setFontSize(18);
+            doc.text("Resultaten en Volwassenheidsfases", 20, 20);
+
+            doc.setFontSize(10);
+            const questions = [
+                "Onderwijzen en ondersteunen van onderzoeksvaardigheden",
+                "Onderzoeksontwerp en methodologie",
+                "Data-analyse en kritisch evalueren",
+                "Integratie van onderzoeksresultaten in het onderwijs",
+                "Leiderschap in onderzoek",
+                "Deelname aan onderzoeksprojecten (ervaring)",
+                "Bijscholing op het gebied van onderzoeksmethodologie (kennisontwikkeling)"
+            ];
+
+            let yOffset = 40;
+            questions.forEach((question, index) => {
+                const score = values[index];
+                const maturityDescription = maturityDescriptions[`q${index + 1}`][score - 1];
+                const nextPhaseDescription = maturityDescriptions[`q${index + 1}`][Math.min(score, 4)]; // Show next phase if available
+
+                doc.text(`${index + 1}. ${question}: Score ${score}`, 20, yOffset);
+                yOffset += 10;
+                doc.text(`Huidige fase: ${maturityDescription}`, 20, yOffset);
+                yOffset += 10;
+                doc.text(`Volgende fase: ${nextPhaseDescription}`, 20, yOffset);
+                yOffset += 15; // Add extra space after each question
+            });
+
+            // Page 3 - Radar Chart
+            doc.addPage();
+            doc.setFontSize(18);
+            doc.text("Radar Chart", 105, 20, null, null, "center");
+
+            const chartImage = radarChart.toBase64Image();
+            doc.addImage(chartImage, 'PNG', 20, 30, 170, 220);
+
+            doc.save("onderzoekend_vermogen_rapport.pdf");
+        }
+    </script>
+</body>
+</html>
