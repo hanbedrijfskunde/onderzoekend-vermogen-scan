@@ -302,14 +302,19 @@
             questions.forEach((question, index) => {
                 const score = values[index];
                 const maturityDescription = maturityDescriptions[`q${index + 1}`][score - 1];
-                const nextPhaseDescription = maturityDescriptions[`q${index + 1}`][Math.min(score, 4)]; // Show next phase if available
-
                 doc.text(`${index + 1}. ${question}: Score ${score}`, 20, yOffset);
                 yOffset += 10;
                 doc.text(`Huidige fase: ${maturityDescription}`, 20, yOffset);
                 yOffset += 10;
-                doc.text(`Volgende fase: ${nextPhaseDescription}`, 20, yOffset);
-                yOffset += 15; // Add extra space after each question
+
+                // Only show the next phase if the score is less than 5
+                if (score < 5) {
+                    const nextPhaseDescription = maturityDescriptions[`q${index + 1}`][score]; // Show next phase
+                    doc.text(`Volgende fase: ${nextPhaseDescription}`, 20, yOffset);
+                    yOffset += 15; // Add extra space after each question
+                } else {
+                    yOffset += 10; // Add less space if there's no next phase
+                }
             });
 
             // Page 3 - Radar Chart
@@ -320,8 +325,10 @@
             const chartImage = radarChart.toBase64Image();
             doc.addImage(chartImage, 'PNG', 20, 30, 170, 220);
 
-            doc.save("onderzoekend_vermogen_rapport.pdf");
+            // Save the PDF with the user's first name in the file name
+            doc.save(`onderzoekend_vermogen_rapport_${firstName}.pdf`);
         }
+
     </script>
 </body>
 </html>
